@@ -19,7 +19,7 @@ To install the depenencies
 $ pip install -r requirements.txt
 ```
 
-## Traning
+## Training
 
 - The ML class in ```ml.py``` file present in src folder implenets different options to get started with model traning.
 - A GridSearchCV traning can be perfomed with all the listed models in ```ml.py``` by calling the ```train_gridsearch()``` method provided the data after intializing the ```Sentiment_Analysis``` class in ```pipeline.py```
@@ -69,6 +69,7 @@ API endpoints built using pyramid web framework along with **Swagger UI API docu
 
 ### Run the pyramid app server
 ```
+$ cd src
 $ python app.py
 ```
 
