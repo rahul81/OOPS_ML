@@ -3,7 +3,7 @@ from pyramid.config import Configurator
 from pyramid.response import Response
 from pyramid.view import view_config
 
-from src import pipeline
+import pipeline
 
 import pandas as pd 
 import pickle
@@ -29,7 +29,7 @@ def check(request):
 if __name__ == '__main__':
 
 
-    model = pickle.load(open("src/models/MultinomialNB.pkl","rb"))
+    model = pickle.load(open("models/MultinomialNB.pkl","rb"))
     SA = pipeline.Sentiment_Analysis(test=True)
     
 
