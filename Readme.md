@@ -1,7 +1,7 @@
 # Object oriented approach for machine learning
 
 ## Data
-Data used in this project is ariline_sentiment_analysis.csv containing 14000+ rows and 2 columns named test contaning test reviews and column airline sentiment contaning sentiment associated with each test respectively.
+Data used in this project is airline_sentiment_analysis.csv containing 14000+ rows and 2 columns named test contaning test reviews and column airline sentiment contaning sentiment associated with each test respectively.
 
 ## Setting Up
 * python 3.x
