@@ -75,7 +75,7 @@ $ python app.py
 - pyramid server becomes available at **http://localhost:5000**
 - Swagger UI can be accessed at **http://localhost:5000/docs/**
 
-
+![Swagger UI](./images/swagger.png)
 
 
 
