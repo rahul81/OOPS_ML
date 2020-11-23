@@ -1,0 +1,70 @@
+openapi: "3.0.0"
+
+info:
+  version: "1.0.0"
+  title: A Sentiment analysis api
+
+paths:
+
+  /check:
+
+    post:
+      summary: Get sentiment of a text
+      operationId: getSentiment
+      requestBody:
+        required: true
+        description: Text to be analyzed
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Item'
+
+      responses:
+        '200':
+          description: Success message.
+          content:
+            application/json:
+              schema:
+                type: object
+
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '500':
+          $ref: '#/components/responses/ValidationError'
+
+
+components:
+
+  schemas:
+
+    Item:
+      type: object
+      required:
+        - text
+      properties:
+        text:
+          type: string
+          maxLength: 100
+
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        field:
+          type: string
+        message:
+          type: string
+        exception:
+          type: string
+
+  responses:
+
+    ValidationError:
+      description: OpenAPI request/response validation failed
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/Error"
