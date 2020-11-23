@@ -1,0 +1,6 @@
+pandas
+numpy
+sklearn
+imblearn
+pyramid
+pyramid_openapi3
