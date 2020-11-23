@@ -10,7 +10,7 @@ import pickle
 
 
 class Sentiment_Analysis:
-    def __init__(self, max_features=5000, test=False, feature_strategy="Tfidf"):
+    def __init__(self, max_features=5000, test=False, feature_stratergy="Tfidf"):
         self.info = Information()
         self.preprocess = Preprocess()
         self.make_features = make_features(test)
@@ -22,16 +22,16 @@ class Sentiment_Analysis:
             print("INFERENCE PHASE")
         else:
             print("TRAINING PHASE")
-            if feature_strategy == "Tfidf":
+            if feature_stratergy == "Tfidf":
                 self.vectorizer = TfidfVectorizer(max_features=max_features)
-            elif feature_strategy == "Count":
+            elif feature_stratergy == "Count":
                 self.vectorizer = CountVectorizer(max_features=max_features)
 
     def transform(self, data, test=False):
 
         if test == False:
             self.info.info(data)
-        data = self.preprocess.clean(data, emoticon_pattern=1)
+        data = self.preprocess.clean(data, emoticon_pattern=2)
         features = self.make_features.get_features(data["clean_text"], self.vectorizer)
 
         print("New features shape:", features.shape)

@@ -56,7 +56,8 @@ class Preprocess:
         )
 
         return text
-
+        
+        #replace emojis with text 
     def process_emo(self, text):
         for emot in UNICODE_EMO:
             text = text.replace(
@@ -64,7 +65,8 @@ class Preprocess:
                 "_".join(UNICODE_EMO[emot].replace(",", "").replace(":", "").split()),
             )
         return text
-
+        
+        #replace emoticons with text
     def convert_emoticons(self, text):
         for emot in EMOTICONS:
             text = re.sub(
@@ -73,7 +75,8 @@ class Preprocess:
                 text,
             )
         return text
-
+        
+        #removing emojis
     def emoji(self, string):
         emoji_pattern = re.compile(
             "["
@@ -88,6 +91,7 @@ class Preprocess:
         )
         return emoji_pattern.sub(r"", string)
 
+        #remving emoticons
     def remove_emoticons(self, text):
         emoticon_pattern = re.compile(u"(" + u"|".join(k for k in EMOTICONS) + u")")
         return emoticon_pattern.sub(r"", text)

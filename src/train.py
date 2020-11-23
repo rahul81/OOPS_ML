@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.ensemble import BaggingClassifier
+from sklearn.naive_bayes import MultinomialNB, GaussianNB
+from sklearn.ensemble import BaggingClassifier, RandomForestClassifier
 import pipeline
 
 
@@ -19,3 +19,4 @@ if __name__ == "__main__":
         print("**********************")
         print("Model with Alpha = ", a)
         print("**********************")
+
