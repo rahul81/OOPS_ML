@@ -21,13 +21,13 @@ $ pip install -r requirements.txt
 
 ## Training
 
-- The ML class in ```ml.py``` file present in src folder implenets different options to get started with model traning.
+- The ML class in ```ml.py``` file present in src folder implements different options to get started with model traning.
 - A GridSearchCV traning can be perfomed with all the listed models in ```ml.py``` by calling the ```train_gridsearch()``` method provided the data after intializing the ```Sentiment_Analysis``` class in ```pipeline.py```
 ```
 import pipeline
 
 SA = pipeline.Sentiment_Analysis()
-SA.train_gridseatch(df,sample_data=True,sampling_ratio=(.4,.7),n_splits=5,test_size=.2)
+SA.train_gridsearch(df,sample_data=True,sampling_ratio=(.4,.7),n_splits=5,test_size=.2)
 ```
 - A custom model of choice can be trained with the same data processing pipeline by calling the ```train_model``` method and passing the model as argument after initializing the ```Sentiment_Analysis``` class in ```pipeline.py```
 ```
